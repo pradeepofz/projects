@@ -2,7 +2,7 @@
 // para.innerHTML='hey'
 
 const numberButtons = document.querySelectorAll('[data-number]');
-const operationButton = document.querySelectorAll('[data-operation]');
+const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
 const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]');
@@ -27,7 +27,11 @@ class Calculator{
     }
 
     appendNumber(number){
-        this.currentOperand = number;
+        // this.currentOperand = number;
+        // if (number === '.' && this.currentOperand.includes('.')) 
+        // return this.currentOperand = this.currentOperand.toString() + number.toString()
+        if( number === '.'  && this.currentOperand.includes('.')) return
+         this.currentOperand = this.currentOperand.toString() + number.toString();
 
     }
 
@@ -50,6 +54,13 @@ const calculator = new Calculator(previousOperandTextElement, currentOperandText
 numberButtons.forEach(button => {
     button.addEventListener('click', ( )=> {
         calculator.appendNumber(button.innerText)  //number
+        calculator.updateDisplay();
+    });
+});
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText)  //number
         calculator.updateDisplay();
     });
 });
