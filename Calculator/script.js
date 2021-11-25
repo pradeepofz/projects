@@ -26,15 +26,22 @@ class Calculator {
 
     }
 
+<<<<<<< HEAD
     appendNumber(number) {
+=======
+    appendNumber(number){
+>>>>>>> fb736c15867763fbf296e30253948b0f475cf03d
         // this.currentOperand = number;
         // if (number === '.' && this.currentOperand.includes('.')) 
         // return this.currentOperand = this.currentOperand.toString() + number.toString()
         if( number === '.'  && this.currentOperand.includes('.')) return
          this.currentOperand = this.currentOperand.toString() + number.toString();
+<<<<<<< HEAD
     }
 
     chooseOperation(operation) {
+=======
+>>>>>>> fb736c15867763fbf296e30253948b0f475cf03d
 
     }
 
@@ -59,7 +66,11 @@ numberButtons.forEach(button => {
 
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
+<<<<<<< HEAD
         calculator.chooseOperation(button.innerText)  
+=======
+        calculator.chooseOperation(button.innerText)  //number
+>>>>>>> fb736c15867763fbf296e30253948b0f475cf03d
         calculator.updateDisplay();
     });
 });
